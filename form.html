@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: skyblue;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0077b6;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #0077b6;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #0077b6;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function quiz(e) {
+            e.preventDefault(); // Prevent the default form submission behavior
+    
+            // Get the form element by its ID
+            var form = document.getElementById("student-registration-form");
+    
+            // Get the input values from the form
+            var regNo = form.elements["reg-no"].value;
+            var name = form.elements["name"].value;
+            var batch = form.elements["batch"].value;
+            var email = form.elements["email"].value;
+    
+            // Create a message with the form data
+            var message = "Student Registration Details:\n";
+            message += "Registration Number: " + regNo + "\n";
+            message += "Student Name: " + name + "\n";
+            message += "Batch: " + batch + "\n";
+            message += "Email: " + email;
+    
+            // Display the message (you can replace this with your desired action)
+            alert(message);
+        }
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>QUIZZY</h1>
+        <h3>Login/Signup</h3>
+        
+        <form action="form.php" method="POST" id="student-registration-form">
+            <label for="reg-no">Student Registration Number:</label>
+            <input type="text" id="reg-no" name="reg-no" required>
+            
+            <label for="name">Student Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="batch">Batch:</label>
+            <input type="text" id="batch" name="batch" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <button onclick="quiz(event)">SUBMIT</button>
+        </form>
+    </div>
+
+    <script>
+        function quiz(e) {
+            e.preventDefault();
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
